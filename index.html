@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>French Tacos MYA2 | Alta Cocina Urbana & Gourmet - Cieza</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#FCFCFA',
+                        cream: '#F7F5F0',
+                        taupe: '#8E8882',
+                        goldaccent: '#C5A059',
+                        goldhover: '#B38F4D',
+                        charcoaltext: '#1A1A1A',
+                        softborder: '#EAE5DE'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons for clean UI symbols (Zero Emojis) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #FCFCFA;
+            color: #1A1A1A;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .font-serif-luxury {
+            font-family: 'Playfair Display', serif;
+        }
+        .gold-gradient-line {
+            background: linear-gradient(90deg, transparent, #C5A059, transparent);
+        }
+        .glass-nav {
+            background: rgba(252, 252, 250, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        /* Custom smooth scrollbar */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FCFCFA;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-[#C5A059] selection:text-white">
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-nav border-b border-[#EAE5DE]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
+            <!-- Brand Logo & Address -->
+            <div class="cursor-pointer flex flex-col" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                <span class="text-lg sm:text-2xl font-serif-luxury font-bold tracking-wider text-charcoaltext uppercase">French Tacos MYA2</span>
+                <span class="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-taupe font-medium">Cieza, Murcia</span>
+            </div>
+
+            <!-- Desktop & Mobile Header Right Actions -->
+            <div class="flex items-center space-x-4 sm:space-x-8">
+                <!-- Static Phone Display (NOT a button) -->
+                <div class="hidden md:flex flex-col text-right">
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-taupe font-semibold">Atención y Reservas</span>
+                    <span class="text-sm font-semibold tracking-wide text-charcoaltext font-mono">868 08 37 39</span>
+                </div>
+
+                <!-- Staff Access Button (Mobile optimized touch target) -->
+                <button onclick="openStaffModal()" class="px-4 sm:px-5 py-2.5 rounded-full bg-charcoaltext hover:bg-black text-white text-[11px] sm:text-xs uppercase tracking-widest font-medium transition-all shadow-sm active:scale-95">
+                    Acceso Local
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow pt-24 sm:pt-28 pb-16 px-4 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full space-y-12 sm:space-y-16">
+
+        <!-- HERO SECTION WITH REAL VENUE PHOTOGRAPHY -->
+        <section class="relative rounded-2xl sm:rounded-3xl overflow-hidden bg-[#F7F5F0] border border-[#EAE5DE] shadow-xl grid grid-cols-1 lg:grid-cols-12 min-h-[460px] sm:min-h-[520px]">
+            <!-- Left Text Column -->
+            <div class="lg:col-span-7 p-6 sm:p-12 lg:p-16 flex flex-col justify-center space-y-5 sm:space-y-6">
+                <div class="inline-flex items-center space-x-2 text-[11px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-taupe font-semibold">
+                    <span>Alta Cocina Urbana</span>
+                    <span class="w-6 sm:w-8 h-[1px] bg-taupe"></span>
+                    <span>Cieza</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif-luxury font-bold tracking-tight text-charcoaltext leading-[1.12]">
+                    El arte del <span class="italic font-normal">French Tacos</span> gourmet en Cieza
+                </h1>
+                <p class="text-taupe text-sm sm:text-base leading-relaxed font-light">
+                    Una reinterpretación sofisticada de la gastronomía francesa urbana. Ingredientes 100% Halal seleccionados, salsa artesanal secreta y acabados al horno con auténtico queso fundido.
+                </p>
+
+                <!-- Location & Info Details -->
+                <div class="pt-1 flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-8 text-xs sm:text-sm text-charcoaltext">
+                    <div class="flex items-center space-x-2.5">
+                        <span class="w-2 h-2 rounded-full bg-[#C5A059]"></span>
+                        <span class="font-medium">C. Escultor Salzillo, 38</span>
+                    </div>
+                    <div class="flex items-center space-x-2.5">
+                        <span class="w-2 h-2 rounded-full bg-[#C5A059]"></span>
+                        <span class="font-medium font-mono">Tel: 868 08 37 39</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Real Venue Image Column -->
+            <div class="lg:col-span-5 relative min-h-[260px] sm:min-h-[320px] lg:min-h-full bg-[#EAE5DE]">
+                <!-- Real venue reference photo in Cieza -->
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="French Tacos MYA2 Local Cieza" class="absolute inset-0 w-full h-full object-cover filter brightness-95">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#F7F5F0]/60 lg:to-transparent"></div>
+                <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg">
+                    <p class="text-[10px] sm:text-[11px] uppercase tracking-wider text-taupe font-semibold">Establecimiento Oficial</p>
+                    <p class="text-xs sm:text-sm font-serif-luxury font-bold text-charcoaltext">Abierto Todos los Días de 13:00 a 00:00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHOWCASE SECTION TITLE (Filterless & Clean) -->
+        <div class="space-y-3 text-center max-w-2xl mx-auto pt-2">
+            <span class="text-[11px] sm:text-xs uppercase tracking-[0.25em] sm:tracking-[0.3em] text-taupe font-semibold">Selección Culinaria</span>
+            <h2 class="text-2xl sm:text-4xl font-serif-luxury font-bold text-charcoaltext">Nuestra Vitrina Gourmet</h2>
+            <div class="w-16 h-[1px] gold-gradient-line mx-auto"></div>
+            <p class="text-taupe text-xs sm:text-sm font-light">Creaciones artesanales publicadas en tiempo real por nuestros maestros culinarios.</p>
+        </div>
+
+        <!-- PRODUCTS GRID (Fully Responsive & Fluid Cards) -->
+        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Dynamically populated products -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-16 sm:py-20 bg-[#F7F5F0] rounded-2xl sm:rounded-3xl border border-[#EAE5DE]">
+            <h3 class="text-lg sm:text-xl font-serif-luxury font-bold text-charcoaltext mb-2">Vitrina en actualización</h3>
+            <p class="text-taupe text-xs sm:text-sm">Pronto aparecerán nuevas creaciones culinarias añadidas por el personal.</p>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#F7F5F0] border-t border-[#EAE5DE] py-12 sm:py-16 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12">
+            <div class="space-y-3">
+                <h3 class="text-lg sm:text-xl font-serif-luxury font-bold text-charcoaltext tracking-wide">FRENCH TACOS MYA2</h3>
+                <p class="text-taupe text-xs sm:text-sm leading-relaxed font-light">
+                    Excelencia gastronómica y alta cocina urbana en el corazón de Cieza. Calidad gourmet 100% Halal.
+                </p>
+            </div>
+            <div class="space-y-2 sm:space-y-3">
+                <h4 class="text-charcoaltext font-semibold text-[11px] sm:text-xs uppercase tracking-[0.2em]">Ubicación y Contacto</h4>
+                <p class="text-taupe text-xs sm:text-sm">C. Escultor Salzillo, 38, 30530 Cieza, Murcia</p>
+                <p class="text-taupe text-xs sm:text-sm font-mono">Teléfono: 868 08 37 39</p>
+            </div>
+            <div class="space-y-2 sm:space-y-3">
+                <h4 class="text-charcoaltext font-semibold text-[11px] sm:text-xs uppercase tracking-[0.2em]">Horario Continuo</h4>
+                <p class="text-taupe text-xs sm:text-sm">Lunes a Domingo: 13:00 - 00:00</p>
+                <p class="text-taupe text-[11px] sm:text-xs pt-1">&copy; 2026 French Tacos MYA2. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- STAFF PIN MODAL -->
+    <div id="staff-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm hidden p-4 sm:p-6">
+        <div class="bg-white border border-[#EAE5DE] rounded-2xl sm:rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <button onclick="closeStaffModal()" class="absolute.top-5.right-5 top-5 right-5 text-taupe hover:text-charcoaltext transition w-8 h-8 rounded-full bg-[#F7F5F0] flex items-center justify-center">
+                <i class="fa-solid fa-xmark text-xs"></i>
+            </button>
+            <div class="text-center space-y-2 sm:space-y-3 mb-6 sm:mb-8 mt-2">
+                <h3 class="text-xl sm:text-2xl font-serif-luxury font-bold text-charcoaltext">Acceso de Personal</h3>
+                <p class="text-taupe text-xs">Introduce el código de acceso del establecimiento</p>
+            </div>
+            
+            <form onsubmit="handleStaffLogin(event)" class="space-y-4 sm:space-y-5">
+                <div>
+                    <input type="password" id="staff-pin-input" placeholder="Introduce código..." class="w-full text-center tracking-widest text-base sm:text-lg py-3.5 bg-[#FCFCFA] border border-[#EAE5DE] rounded-xl sm:rounded-2xl text-charcoaltext focus:outline-none focus:border-[#C5A059] transition font-mono">
+                </div>
+                <div id="pin-error" class="text-rose-600 text-xs text-center hidden font-medium">Código incorrecto. Verifica la clave exacta.</div>
+                <button type="submit" class="w-full py-3.5 sm:py-4 bg-charcoaltext hover:bg-black text-white font-medium rounded-xl sm:rounded-2xl shadow-lg transition text-[11px] sm:text-xs uppercase tracking-widest active:scale-98">
+                    Verificar y Acceder
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN / STAFF DASHBOARD (Full screen overlay) -->
+    <div id="view-admin" class="hidden fixed inset-0 z-40 bg-[#FCFCFA] overflow-y-auto pt-20 sm:pt-24 pb-16 px-4 sm:px-8 lg:px-12">
+        <div class="max-w-4xl mx-auto space-y-8 sm:space-y-10">
+            
+            <!-- Admin Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#F7F5F0] border border-[#EAE5DE] p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm">
+                <div>
+                    <span class="text-[11px] sm:text-xs uppercase tracking-[0.2em] text-taupe font-semibold">Panel Privado</span>
+                    <h2 class="text-2xl sm:text-3xl font-serif-luxury font-bold text-charcoaltext mt-0.5">Gestión de Vitrina MYA2</h2>
+                </div>
+                <button onclick="logoutAdmin()" class="px-5 py-2.5 sm:py-3 rounded-full bg-white hover:bg-[#EAE5DE] text-charcoaltext text-[11px] sm:text-xs uppercase tracking-widest font-semibold transition border border-[#EAE5DE] active:scale-95">
+                    Cerrar Panel
+                </button>
+            </div>
+
+            <!-- Add Product & Camera Suite -->
+            <div class="bg-white border border-[#EAE5DE] rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-sm">
+                <h3 class="text-xl sm:text-2xl font-serif-luxury font-bold text-charcoaltext mb-6 sm:mb-8">Publicar Nuevo Plato Gourmet</h3>
+
+                <form onsubmit="handlePublishProduct(event)" class="space-y-6 sm:space-y-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                        
+                        <!-- Left Column: Details -->
+                        <div class="space-y-5 sm:space-y-6">
+                            <div>
+                                <label class="block text-[11px] sm:text-xs uppercase tracking-[0.2em] text-taupe font-semibold mb-2">Nombre del Plato</label>
+                                <input type="text" id="prod-name" required placeholder="Ej: Tacos MYA2 Signature Doble..." class="w-full px-4.5 py-3.5 bg-[#FCFCFA] border border-[#EAE5DE] rounded-xl sm:rounded-2xl text-charcoaltext placeholder-zinc-400 focus:outline-none focus:border-[#C5A059] text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-[11px] sm:text-xs uppercase tracking-[0.2em] text-taupe font-semibold mb-2">Precio (EUR)</label>
+                                <input type="number" step="0.01" id="prod-price" required placeholder="9.50" class="w-full px-4.5 py-3.5 bg-[#FCFCFA] border border-[#EAE5DE] rounded-xl sm:rounded-2xl text-charcoaltext placeholder-zinc-400 focus:outline-none focus:border-[#C5A059] text-sm font-mono">
+                            </div>
+
+                            <div>
+                                <label class="block text-[11px] sm:text-xs uppercase tracking-[0.2em] text-taupe font-semibold mb-2">Descripción Gourmet</label>
+                                <textarea id="prod-desc" rows="3" required placeholder="Ingredientes, salsa secreta francesa, gratinado al horno..." class="w-full px-4.5 py-3.5 bg-[#FCFCFA] border border-[#EAE5DE] rounded-xl sm:rounded-2xl text-charcoaltext placeholder-zinc-400 focus:outline-none focus:border-[#C5A059] text-sm"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Camera & Real Photo Capture -->
+                        <div class="space-y-6 flex flex-col justify-between">
+                            <div>
+                                <label class="block text-[11px] sm:text-xs uppercase tracking-[0.2em] text-taupe font-semibold mb-2">Fotografía Real (Cámara o Archivo)</label>
+                                <div class="border-2 border-dashed border-[#EAE5DE] rounded-xl sm:rounded-2xl p-6 text-center bg-[#FCFCFA] relative overflow-hidden flex flex-col items-center justify-center min-h-[220px]">
+                                    
+                                    <!-- Mobile Camera & File Input -->
+                                    <input type="file" id="prod-file-input" accept="image/*" capture="environment" onchange="handleImageSelected(event)" class="absolute inset-0 opacity-0 cursor-pointer z-20">
+                                    
+                                    <!-- Preview Image Container -->
+                                    <div id="image-preview-container" class="hidden absolute inset-0 w-full h-full bg-white z-10 flex items-center justify-center">
+                                        <img id="image-preview" src="" alt="Preview" class="w-full h-full object-cover">
+                                        <button type="button" onclick="clearImage(event)" class="absolute top-4 right-4 bg-black/70 hover:bg-black text-white w-9 h-9 rounded-full flex items-center justify-center z-30 transition">
+                                            <i class="fa-solid fa-trash text-xs"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Placeholder Instructions -->
+                                    <div id="upload-placeholder" class="space-y-3 pointer-events-none">
+                                        <div class="w-12 h-12 mx-auto rounded-full bg-[#F7F5F0] flex items-center justify-center text-charcoaltext text-lg shadow-sm">
+                                            <i class="fa-solid fa-camera"></i>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-semibold text-charcoaltext">Pulsa para hacer foto con la cámara</p>
+                                            <p class="text-xs text-taupe mt-1">O selecciona una imagen de tu dispositivo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 sm:py-4 bg-charcoaltext hover:bg-black text-white font-medium rounded-xl sm:rounded-2xl shadow-lg transition text-[11px] sm:text-xs uppercase tracking-widest active:scale-98">
+                                Publicar en Vitrina al Instante
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- Existing Products Management List -->
+            <div class="bg-white border border-[#EAE5DE] rounded-2xl sm:rounded-3xl p-6 sm:p-10 shadow-sm space-y-6">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl sm:text-2xl font-serif-luxury font-bold text-charcoaltext">Artículos Publicados (<span id="admin-product-count">0</span>)</h3>
+                    <button onclick="resetDefaultProducts()" class="text-xs text-taupe hover:text-charcoaltext underline transition">
+                        Restaurar Menú Original
+                    </button>
+                </div>
+
+                <div id="admin-products-list" class="space-y-4 max-h-[380px] overflow-y-auto pr-2">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Custom Toast Notification -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-white border border-[#EAE5DE] text-charcoaltext px-5 py-3.5 rounded-2xl shadow-2xl flex items-center space-x-3.5">
+            <div class="w-7 h-7 rounded-full bg-[#F7F5F0] flex items-center justify-center text-[#C5A059] flex-shrink-0">
+                <i class="fa-solid fa-check text-xs"></i>
+            </div>
+            <div>
+                <p id="toast-title" class="font-semibold text-sm">Éxito</p>
+                <p id="toast-msg" class="text-xs text-taupe">Operación realizada correctamente.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- APPLICATION JAVASCRIPT -->
+    <script>
+        // Initial Luxury Default Products (Strictly No Emojis)
+        const DEFAULT_PRODUCTS = [
+            {
+                id: '1',
+                name: 'Tacos MYA2 Signature XL',
+                price: 8.90,
+                desc: 'Doble carne picada halal, patatas fritas crujientes en su interior, salsa francesa casera gratinada con auténtico queso cheddar fundido.',
+                image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: '2',
+                name: 'Tacos Crispy Chicken Gourmet',
+                price: 8.20,
+                desc: 'Pollo crujiente marinado al estilo secreto MYA2, salsa de queso cheddar suave, patatas y salsa algérienne.',
+                image: 'https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: '3',
+                name: 'Menú Completo MYA2',
+                price: 11.50,
+                desc: 'Incluye tu Tacos favorito tamaño L, ración generosa de patatas fritas sazonadas con especias de la casa y bebida fría de lata.',
+                image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: '4',
+                name: 'Menú Dúo Pareja',
+                price: 21.00,
+                desc: '2 Tacos XL a elegir, 2 patatas fritas grandes para compartir con salsas variadas y botella de 1.5L.',
+                image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: '5',
+                name: 'Refresco Lata Frío',
+                price: 2.20,
+                desc: 'Bebida fría 33cl bien refrescante para acompañar tu menú.',
+                image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: '6',
+                name: 'Extra Salsa Francesa Casera',
+                price: 1.50,
+                desc: 'Nuestra mítica salsa francesa artesanal para dipear con tus patatas.',
+                image: 'https://images.unsplash.com/photo-1472476443507-c7a5948774fc?auto=format&fit=crop&w=800&q=80'
+            }
+        ];
+
+        let products = [];
+        let base64ImageString = '';
+
+        // Initialize on load
+        window.onload = function() {
+            loadProductsFromStorage();
+            renderCatalog();
+        };
+
+        function loadProductsFromStorage() {
+            const saved = localStorage.getItem('mya2_luxury_products_cieza');
+            if (saved) {
+                try {
+                    products = JSON.parse(saved);
+                } catch (e) {
+                    products = DEFAULT_PRODUCTS;
+                }
+            } else {
+                products = DEFAULT_PRODUCTS;
+                saveProductsToStorage();
+            }
+        }
+
+        function saveProductsToStorage() {
+            localStorage.setItem('mya2_luxury_products_cieza', JSON.stringify(products));
+        }
+
+        // Render Clean Filterless Showcase Cards
+        function renderCatalog() {
+            const grid = document.getElementById('products-grid');
+            const emptyState = document.getElementById('empty-state');
+
+            if (products.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            
+            grid.innerHTML = products.map(p => `
+                <div class="bg-white border border-[#EAE5DE] rounded-2xl sm:rounded-3xl overflow-hidden hover:border-[#C5A059] transition-all duration-300 group flex flex-col shadow-sm">
+                    <div class="relative h-56 sm:h-64 overflow-hidden bg-[#F7F5F0]">
+                        <img src="${p.image || 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80'}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80'">
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-md text-charcoaltext font-serif-luxury font-bold px-3.5 py-1.5 rounded-full shadow-sm text-sm sm:text-base">
+                            ${Number(p.price).toFixed(2)} EUR
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between space-y-4">
+                        <div class="space-y-2 sm:space-y-3">
+                            <h3 class="text-xl sm:text-2xl font-serif-luxury font-bold text-charcoaltext">${p.name}</h3>
+                            <p class="text-taupe text-xs sm:text-sm leading-relaxed font-light">${p.desc}</p>
+                        </div>
+                        <div class="pt-4 border-t border-[#EAE5DE] flex items-center justify-between text-[11px] sm:text-xs text-taupe uppercase tracking-widest font-medium">
+                            <span>Recién Preparado</span>
+                            <span class="text-charcoaltext font-mono">Cieza</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Staff Modal Controls
+        function openStaffModal() {
+            document.getElementById('staff-modal').classList.remove('hidden');
+            document.getElementById('staff-pin-input').value = '';
+            document.getElementById('pin-error').classList.add('hidden');
+            setTimeout(() => document.getElementById('staff-pin-input').focus(), 100);
+        }
+
+        function closeStaffModal() {
+            document.getElementById('staff-modal').classList.add('hidden');
+        }
+
+        function handleStaffLogin(e) {
+            e.preventDefault();
+            const pin = document.getElementById('staff-pin-input').value.trim();
+            // Exact required security code
+            if (pin === 'TACOS89756CIEZE') {
+                closeStaffModal();
+                openAdminPanel();
+            } else {
+                document.getElementById('pin-error').classList.remove('hidden');
+                document.getElementById('staff-pin-input').value = '';
+            }
+        }
+
+        function openAdminPanel() {
+            document.getElementById('view-admin').classList.remove('hidden');
+            renderAdminProductsList();
+        }
+
+        function logoutAdmin() {
+            document.getElementById('view-admin').classList.add('hidden');
+            renderCatalog();
+        }
+
+        // Camera & File Handler
+        function handleImageSelected(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    base64ImageString = event.target.result;
+                    document.getElementById('image-preview').src = base64ImageString;
+                    document.getElementById('image-preview-container').classList.remove('hidden');
+                    document.getElementById('upload-placeholder').classList.add('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function clearImage(e) {
+            e.stopPropagation();
+            base64ImageString = '';
+            document.getElementById('prod-file-input').value = '';
+            document.getElementById('image-preview').src = '';
+            document.getElementById('image-preview-container').classList.add('hidden');
+            document.getElementById('upload-placeholder').classList.remove('hidden');
+        }
+
+        // Publish Product
+        function handlePublishProduct(e) {
+            e.preventDefault();
+            const name = document.getElementById('prod-name').value;
+            const price = parseFloat(document.getElementById('prod-price').value);
+            const desc = document.getElementById('prod-desc').value;
+            
+            const newProduct = {
+                id: 'prod_' + Date.now(),
+                name,
+                price,
+                desc,
+                image: base64ImageString || 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80'
+            };
+
+            products.unshift(newProduct);
+            saveProductsToStorage();
+            
+            e.target.reset();
+            clearImage({stopPropagation: ()=>{}});
+            
+            renderAdminProductsList();
+            renderCatalog();
+            
+            showToast('Publicado con éxito', 'El artículo ya es visible en la vitrina.');
+        }
+
+        function renderAdminProductsList() {
+            const list = document.getElementById('admin-products-list');
+            document.getElementById('admin-product-count').innerText = products.length;
+            
+            if (products.length === 0) {
+                list.innerHTML = `<p class="text-taupe text-center py-6 text-sm">No hay productos en este momento.</p>`;
+                return;
+            }
+
+            list.innerHTML = products.map(p => `
+                <div class="flex items-center justify-between p-3.5 sm:p-4 bg-[#FCFCFA] border border-[#EAE5DE] rounded-xl sm:rounded-2xl">
+                    <div class="flex items-center space-x-3.5 sm:space-x-4">
+                        <img src="${p.image}" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover" onerror="this.src='https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80'">
+                        <div>
+                            <h4 class="text-charcoaltext text-sm sm:text-base font-bold font-serif-luxury">${p.name}</h4>
+                            <p class="text-taupe text-xs font-mono">${Number(p.price).toFixed(2)} EUR</p>
+                        </div>
+                    </div>
+                    <button onclick="deleteProduct('${p.id}')" class="w-10 h-10 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 flex items-center justify-center transition border border-rose-100 active:scale-95">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function deleteProduct(id) {
+            products = products.filter(p => p.id !== id);
+            saveProductsToStorage();
+            renderAdminProductsList();
+            renderCatalog();
+            showToast('Artículo eliminado', 'Se ha retirado de la vitrina correctamente.');
+        }
+
+        function resetDefaultProducts() {
+            if (confirm('¿Desea restaurar el menú original predeterminado?')) {
+                products = DEFAULT_PRODUCTS;
+                saveProductsToStorage();
+                renderAdminProductsList();
+                renderCatalog();
+                showToast('Menú Restaurado', 'Se han cargado los productos oficiales.');
+            }
+        }
+
+        function showToast(title, msg) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-title').innerText = title;
+            document.getElementById('toast-msg').innerText = msg;
+            
+            toast.classList.remove('translate-y-32', 'opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32', 'opacity-0', 'pointer-events-none');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
